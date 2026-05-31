@@ -74,6 +74,14 @@ The application will be accessible at `http://localhost:5173` (or the port shown
 
 ---
 
+## 🌐 Deployment & Performance Notes
+
+### Infrastructure & Cold Starts
+This project is deployed on **Render** (Backend) and **Vercel** (Frontend).
+*   **Render Free Tier:** Please note that the backend service "spins down" after 15 minutes of inactivity. The first request after a break may experience a **30-50 second delay** while the server "wakes up."
+*   **UX Handling:** I have implemented frontend logic to detect these delays and inform the user that the server is currently waking up, ensuring a better user experience during the "cold start" period.
+*   **Production Scaling:** In a production environment, this would be resolved by moving to a paid instance or implementing a "self-ping" cron-job to maintain 100% availability.
+
 ## 🛠️ Key Features
 
 *   **Dynamic Showroom:** Browse a catalog of 30+ popular Indian cars.
